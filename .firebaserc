@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "femiadeniyi"
+  },
+  "targets": {
+    "femiadeniyi": {
+      "hosting": {
+        "pcf": [
+          "pc-football"
+        ]
+      }
+    }
+  }
+}
