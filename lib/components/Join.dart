@@ -142,15 +142,19 @@ class _JoinWidgetState extends State<JoinWidget> {
                                 onPressed: existingUser ? null : () async {
                                   var value = await _showJoinFormDialog();
 
-                                  var n1 = ScaffoldMessenger.of(context)
-                                      .showSnackBar(SnackBar(content: Text('Processing Data $value')));
-                                  await saveUserNameLocally(value);
-                                  await saveUserToFirestore(value);
+                                  if (value != null){
+                                    var n1 = ScaffoldMessenger.of(context)
+                                        .showSnackBar(SnackBar(content: Text('Processing Data $value')));
+                                    await saveUserNameLocally(value);
+                                    await saveUserToFirestore(value);
+                                    n1.close();
 
-                                  n1.close();
+                                    ScaffoldMessenger.of(context)
+                                        .showSnackBar(SnackBar(content: Text('You\'re in!')));
+                                  }
 
-                                  ScaffoldMessenger.of(context)
-                                      .showSnackBar(SnackBar(content: Text('You\'re in!')));
+
+
 
                                 },
                                 child: const Text('JOIN',style: TextStyle(
