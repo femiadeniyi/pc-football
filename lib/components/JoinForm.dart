@@ -24,12 +24,12 @@ class JoinForm extends StatelessWidget {
           key: _formKey,
           child: Container(
             child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-              SizedBox(
-                width: 150,
+              Padding(
+                padding: EdgeInsets.all(16),
                 child: TextFormField(
                   controller: _controller,
                   decoration: InputDecoration(
-                      labelText: "Name", hintText: 'Enter your name'),
+                      labelText: "Football Name", hintText: 'Enter your football name'),
                   // The validator receives the text that the user has entered.
                   validator: (value) {
                     if (value.isEmpty) {

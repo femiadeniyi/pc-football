@@ -75,7 +75,7 @@ class _JoinWidgetState extends State<JoinWidget> {
 
   _showJoinFormDialog() async {
     return showDialog(
-        barrierDismissible: false,
+        barrierDismissible: true,
         context: context,
         builder: (_) {
           return JoinForm();
