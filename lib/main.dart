@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pc_football/components/Join.dart';
 import 'package:pc_football/components/WhoIsComingList.dart';
 
@@ -74,6 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       // Wait for Firebase to initialize and set `_initialized` state to true
       await Firebase.initializeApp();
+      await FirebaseAuth.instance.signInAnonymously();
       setState(() {
         _initialized = true;
       });
